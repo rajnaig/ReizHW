@@ -48,12 +48,16 @@ while (!validMinutes)
     }
 }
 
-double hourAngle = (inputHours % 12) * 30 + (inputMinutes / 2);
-double minuteAngle = inputMinutes * 6;
-double angle = Math.Abs(hourAngle - minuteAngle);
-angle = Math.Min(angle, 360 - angle);
+static double CalculateAngle(int hours,int minutes)
+{
+    double hourAngle = (hours % 12) * 30 + (minutes / 2);
+    double minuteAngle = minutes * 6;
+    double angle = Math.Abs(hourAngle - minuteAngle);
+    angle = Math.Min(angle, 360 - angle);
+    return angle;
+}
 
 Console.WriteLine($"\n\nYour Input time is: {inputHours}:{inputMinutes}\n");
-Console.WriteLine($"The angle between the hour and minute hands is {angle} degrees.");
+Console.WriteLine($"The angle between the hour and minute hands is {CalculateAngle(inputHours,inputMinutes)} degrees.");
 Console.ReadLine();
 
