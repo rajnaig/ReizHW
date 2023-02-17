@@ -56,8 +56,7 @@ static double CalculateAngle(int hours,int minutes)
     angle = Math.Min(angle, 360 - angle);
     return angle;
 }
-
-Console.WriteLine($"\n\nYour Input time is: {inputHours}:{inputMinutes}\n");
-Console.WriteLine($"The angle between the hour and minute hands is {CalculateAngle(inputHours,inputMinutes)} degrees.");
+Console.Clear();
+Console.WriteLine($"\nThe angle between the hour and minute hands is {CalculateAngle(inputHours,inputMinutes)} degrees.");
 Console.ReadLine();
-
+Console.Clear();
